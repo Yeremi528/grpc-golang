@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"google.golang.org/grpc"
@@ -13,7 +14,7 @@ var addr string = "localhost:50051"
 
 func main() {
 	conn, err := grpc.Dial(addr, grpc.WithTransportCredentials(insecure.NewCredentials()))
-
+	fmt.Println(conn)
 	if err != nil {
 		log.Fatalf("failed to connect: %v", err)
 	}
@@ -25,4 +26,6 @@ func main() {
 
 	doSum(s)
 	doGreet(c)
+
+	doGreetManyTimes(c)
 }
