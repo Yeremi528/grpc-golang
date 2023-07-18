@@ -4,9 +4,20 @@ package calculator;
 
 option go_package = "github.com/Yeremi528/grpc-golang/calculator/proto";
 
-import "primes.proto";
+message PrimeRequest {
+    int64 Number = 1;
+}
+
+message PrimeResponse {
+    int64 Result = 1;
+}
+
+message AvgResponse {
+    float Result = 1; 
+}
 
 service CalculatorService {
     rpc Primes (PrimeRequest) returns (stream PrimeResponse);
+    rpc Avg_Api (stream PrimeRequest) returns (AvgResponse);
 }
 
