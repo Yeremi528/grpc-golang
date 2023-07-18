@@ -22,10 +22,6 @@ func main() {
 	defer conn.Close()
 
 	c := pb.NewGreetServiceClient(conn)
-	s := pb.NewSumServiceClient(conn)
 
-	doSum(s)
-	doGreet(c)
-
-	doGreetManyTimes(c)
+	doLongGreet(c)
 }
