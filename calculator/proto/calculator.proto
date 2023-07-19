@@ -19,5 +19,6 @@ message AvgResponse {
 service CalculatorService {
     rpc Primes (PrimeRequest) returns (stream PrimeResponse);
     rpc Avg_Api (stream PrimeRequest) returns (AvgResponse);
+    rpc Max_Api (stream PrimeRequest) returns (stream PrimeResponse);
 }
 

@@ -23,5 +23,5 @@ func main() {
 
 	p := pb.NewCalculatorServiceClient(conn)
 
-	doAvg(p)
+	doMax(p)
 }
